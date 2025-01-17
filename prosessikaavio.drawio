@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.6">
   <diagram name="Page-1" id="A3d4FYdrrXB75YcRWw5F">
-    <mxGraphModel dx="2100" dy="1044" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2625" dy="1305" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,7 +16,7 @@
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-4" value="" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;perimeter=ellipsePerimeter;outline=standard;symbol=general;" vertex="1" parent="1">
           <mxGeometry x="287.5" y="175" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-5" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Electricity.csv&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;CompanyLtdDB&lt;/font&gt;&lt;/div&gt;" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-5" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;InvoiceData&lt;/span&gt;" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="440" y="175" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="RAeNe3XWdYtbtNCCi8Cj-7" target="RAeNe3XWdYtbtNCCi8Cj-23">
@@ -26,9 +26,6 @@
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-7" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Exctract all data as it is&lt;/font&gt;" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="440" y="380" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-8" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Create insert procedure to Repository&lt;/font&gt;" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="820" y="380" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="RAeNe3XWdYtbtNCCi8Cj-4" target="RAeNe3XWdYtbtNCCi8Cj-5">
           <mxGeometry relative="1" as="geometry" />
@@ -57,59 +54,55 @@
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-17" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Source&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
           <mxGeometry x="182.5" y="190" width="90" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-18" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;StagingDB&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
-          <mxGeometry x="167.5" y="410" width="120" height="40" as="geometry" />
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-18" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;UiPath&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
+          <mxGeometry x="187.5" y="410" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-19" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Repository&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
-          <mxGeometry x="167.5" y="645" width="120" height="40" as="geometry" />
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-19" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Robot Framework&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
+          <mxGeometry x="137.5" y="645" width="180" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-20" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Reporting&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
-          <mxGeometry x="172.5" y="870" width="110" height="40" as="geometry" />
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-20" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;MySQL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
+          <mxGeometry x="182.5" y="870" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-21" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="242.5" y="550" width="1235" height="230" as="geometry" />
+          <mxGeometry x="240" y="550" width="1240" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RAeNe3XWdYtbtNCCi8Cj-23" target="RAeNe3XWdYtbtNCCi8Cj-8">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RAeNe3XWdYtbtNCCi8Cj-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="420" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-23" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Check data quality and fix found issues&lt;/font&gt;" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-23" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Check data and collect all the necessary information from .pdf&lt;/font&gt;" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="630" y="380" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-24" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="245" y="780" width="1235" height="230" as="geometry" />
+          <mxGeometry x="240" y="780" width="1240" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-25" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Create view for Reporting&lt;/font&gt;" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-25" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;Create validation automation to invoices&lt;/span&gt;" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
           <mxGeometry x="820" y="605" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="RAeNe3XWdYtbtNCCi8Cj-8" target="RAeNe3XWdYtbtNCCi8Cj-25">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="800" y="510" as="sourcePoint" />
-            <mxPoint x="850" y="460" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RAeNe3XWdYtbtNCCi8Cj-28" target="RAeNe3XWdYtbtNCCi8Cj-30">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-28" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;load data model for reporting&lt;/font&gt;" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="795" y="840" width="170" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-29" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="RAeNe3XWdYtbtNCCi8Cj-25" target="RAeNe3XWdYtbtNCCi8Cj-28">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="800" y="650" as="sourcePoint" />
-            <mxPoint x="850" y="600" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-30" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="1190" y="850" width="80" height="80" as="geometry" />
+          <mxGeometry x="1380" y="830" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-31" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB545;strokeColor=#d79b00;opacity=20;" vertex="1" parent="1">
-          <mxGeometry x="280" y="140" width="317.5" height="380" as="geometry" />
+          <mxGeometry x="272.5" y="130" width="317.5" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-39" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Automate the process to transform extracted data to the CSV file&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="820" y="380" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-45" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;Read validated invoice data and transform it to MySQL&lt;/span&gt;" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="605" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-32" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#336600;strokeColor=#d79b00;opacity=20;" vertex="1" parent="1">
-          <mxGeometry x="620" y="330" width="340" height="400" as="geometry" />
+          <mxGeometry x="608.75" y="340" width="551.25" height="400" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-33" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=20;" vertex="1" parent="1">
-          <mxGeometry x="780" y="795" width="590" height="190" as="geometry" />
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-28" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;MySQL Database&lt;/span&gt;" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1009.5" y="825" width="141" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-33" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#007FFF;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="970" y="800" width="500" height="150" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-34" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;EXCTRACT&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB545;strokeColor=#d79b00;opacity=60;" vertex="1" parent="1">
           <mxGeometry x="1510" y="210" width="160" height="40" as="geometry" />
@@ -117,14 +110,29 @@
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-35" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;TRANSFORM&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#336600;strokeColor=#d79b00;opacity=50;" vertex="1" parent="1">
           <mxGeometry x="1510" y="270" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-36" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;LOAD&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=50;" vertex="1" parent="1">
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-36" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;LOAD&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#007FFF;opacity=80;" vertex="1" parent="1">
           <mxGeometry x="1510" y="330" width="160" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-37" value="Power BI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="1040" y="860" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="RAeNe3XWdYtbtNCCi8Cj-38" value="&lt;font style=&quot;font-size: 25px;&quot;&gt;STEPS&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1535" y="150" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-43" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="RAeNe3XWdYtbtNCCi8Cj-25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="880" y="460" as="sourcePoint" />
+            <mxPoint x="930" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-48" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="RAeNe3XWdYtbtNCCi8Cj-45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="645" as="sourcePoint" />
+            <mxPoint x="990" y="595" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RAeNe3XWdYtbtNCCi8Cj-49" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="RAeNe3XWdYtbtNCCi8Cj-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1080" y="685" as="sourcePoint" />
+            <mxPoint x="1130" y="635" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
