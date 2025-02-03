@@ -16,3 +16,5 @@ Työvaiheet:
 6. Lisätään Add Data Row aktiviteetti, millä lisätään Data Tauluun oikeaan sarakkeeseen muuttujan CompanyCoden tieto.
 
 7. Lopuksi kirjoitetaan ResultFile hakemistoon Write-CSV aktiviteetilla uusi .csv tiedosto mikä sisältää laskujen otsikko datan.
+
+8. Haetaan ja lisätään tarvittavat tiedot CSV-tiedostoon
