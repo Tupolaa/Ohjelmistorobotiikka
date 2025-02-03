@@ -4,6 +4,7 @@
   "description": "Projekti",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Excel.Activities": "[2.25.1-preview]",
     "UiPath.PDF.Activities": "[3.21.0-preview]",
     "UiPath.System.Activities": "[24.10.7]"
   },
