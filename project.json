@@ -4,6 +4,7 @@
   "description": "Projekti",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.PDF.Activities": "[3.21.0-preview]",
     "UiPath.System.Activities": "[24.10.7]"
   },
   "webServices": [],
