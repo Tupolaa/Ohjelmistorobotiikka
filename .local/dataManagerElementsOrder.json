@@ -12,6 +12,10 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "SplittedRow&Sequence_17",
+        "InvoiceRowNumber&Sequence_2",
+        "SplittedInvoiceRows&Sequence_2",
+        "RowText&Sequence_1",
         "TotalAmount&Sequence_13",
         "VAT&Sequence_13",
         "ExclVAT&Sequence_13",
