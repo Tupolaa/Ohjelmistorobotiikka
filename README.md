@@ -18,3 +18,7 @@ Työvaiheet:
 7. Lopuksi kirjoitetaan ResultFile hakemistoon Write-CSV aktiviteetilla uusi .csv tiedosto mikä sisältää laskujen otsikko datan.
 
 8. Haetaan ja lisätään tarvittavat tiedot CSV-tiedostoon
+
+9. Erotettiin datarivien tiedot otsikko datoista Split-komennolla
+
+10. Parsittiin tarvittavat datat splitatuista rivi tiedoista CSV-tiedostoon
