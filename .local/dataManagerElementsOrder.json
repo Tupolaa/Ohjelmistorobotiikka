@@ -12,6 +12,13 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "TotalAmount&Sequence_13",
+        "VAT&Sequence_13",
+        "ExclVAT&Sequence_13",
+        "BankAccount&Sequence_13",
+        "DueDate&Sequence_13",
+        "RefNumber&Sequence_13",
+        "CompanyName&Sequence_13",
         "TotalAmount&Sequence_12",
         "VAT&Sequence_12",
         "BankAccount&Sequence_12",
