@@ -19,6 +19,6 @@ Työvaiheet:
 
 8. Haetaan ja lisätään tarvittavat tiedot CSV-tiedostoon
 
-9. Erotettiin, datarivien datat otsikko datoista Split komennolla
+9. Erotettiin datarivien datat otsikko datoista Split-komennolla
 
 10. Parsittiin tarvittavat datat splitatusta rivi tiedoista CSV-tiedostoon
