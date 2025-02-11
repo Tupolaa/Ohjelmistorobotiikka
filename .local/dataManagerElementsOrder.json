@@ -41,6 +41,20 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "_Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_InvoiceHeaderResult&Sequence_1",
+        "dt_InvoiceRowResult&Sequence_1",
+        "InvoiceFiles&Sequence_1",
+        "CompanyCode&Sequence_1",
+        "pdfText&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
