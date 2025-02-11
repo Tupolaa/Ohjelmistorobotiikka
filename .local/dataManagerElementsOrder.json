@@ -12,6 +12,10 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "RowText&Sequence_1",
+        "SplittedInvoiceRows&Sequence_2",
+        "InvoiceRowNumber&Sequence_2",
+        "SplittedRow&Sequence_17",
         "TotalAmount&Sequence_13",
         "VAT&Sequence_13",
         "ExclVAT&Sequence_13",
@@ -28,6 +32,20 @@
         "AmountExclVAT&Sequence_1",
         "InvoiceDate&Sequence_1",
         "InvoiceNumber&Sequence_1",
+        "dt_InvoiceHeaderResult&Sequence_1",
+        "dt_InvoiceRowResult&Sequence_1",
+        "InvoiceFiles&Sequence_1",
+        "CompanyCode&Sequence_1",
+        "pdfText&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "_Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
         "dt_InvoiceHeaderResult&Sequence_1",
         "dt_InvoiceRowResult&Sequence_1",
         "InvoiceFiles&Sequence_1",
