@@ -3,6 +3,7 @@ Library    OperatingSystem
 Library    String
 Library    DatabaseLibrary
 Library    Collections
+Library    DateTime
 
 # Tehdään root-kansion polusta oma muuttuja
 *** Variables ***
@@ -29,12 +30,34 @@ Add invoice header to database
     [Arguments]    ${items}
     Make Connection    ${dbname}
 
-    ${insertStatement}=    Set Variable    insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '2000-01-01', '2000-01-01', '${items}[6]', 0, 0, 0, -1, 'Processing');    
+    ${InvoiceDate}=    Convert Date    ${items}[4]    date_format=%d.%m.%Y    result_format=%Y-%m-%d
+    ${dueDate}=    Convert Date    ${items}[5]    date_format=%d.%m.%Y    result_format=%Y-%m-%d
+
+
+    ${insertStatement}=    Set Variable    insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${InvoiceDate}', '${dueDate}', '${items}[6]', ${items}[7], ${items}[8], ${items}[9], -1, 'Processing');    
     Log    ${insertStatement}
     Execute Sql String    ${insertStatement}
 
 
     Disconnect From Database
+
+
+*** Keywords ***
+Add invoiceRow to Database
+    [Arguments]    ${items}
+    Make Connection    ${dbname}
+
+
+
+    ${insertStatement}=    Set Variable    insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);
+
+    Log    ${insertStatement}
+    Execute Sql String    ${insertStatement}
+
+
+
+    Disconnect From Database
+    
 
 *** Tasks ***
 Read CSV files to lists and add data to database
@@ -75,9 +98,50 @@ Read CSV files to lists and add data to database
 
     # Listataan jokainen taulukon elementti ja tallennetaan se muuttujaan headerItems, erotinmerkkinä puolipiste ';'
     # Kutsutaan keywordia ja lisätään tiedot tietokannan Invoiceheader tauluun
+    # Add invoice headers
     FOR    ${headerElement}    IN    @{headers}
         Log    ${headerElement}
         @{headerItems}=    Split String    ${headerElement}    ;
 
         Add invoice header to database    ${headerItems}
     END    
+
+    # Add invoice Rows
+
+     FOR    ${rowElement}    IN    @{rows}
+        Log    ${rowElement}
+        @{rowItems}=    Split String    ${rowElement}    ;
+
+        Add invoiceRow to Database    ${rowItems}
+    END   
+
+*** Tasks ***
+Validate and update validation info to DB
+    # Find all invoices with status -1 Processing
+    # Validations:
+    #     * Referencenumber
+    #     * IBAN
+    #     * Invoice row amount vs header amount
+    Make Connection    ${dbname}
+
+    # Find invoices
+    ${invoices}=    Query    select InvoiceNumber, ReferenceNumber, BankAccountNumber, TotalAmount from invoiceheader where invoicestatus_ID = -1;
+
+    FOR    ${element}    IN    @{invoices}
+        Log    ${element}
+        ${invoiceStatus}=    Set Variable    0
+        ${invoiceComment}=    Set Variable    All ok
+
+        # Validate referencenumber
+        
+        # Validate IBAN
+        
+        # Validate: Invoice row amount vs header amount
+        
+        # Update status to DB
+        @{params}=    Create List    ${invoiceStatus}    ${invoiceComment}    ${element}[0]
+        ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;
+        Execute Sql String    ${updateStmt}    parameters=${params}
+    END
+
+    Disconnect From Database
