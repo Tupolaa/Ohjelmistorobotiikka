@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-02-19T12:37:06.697684" rpa="true" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-02-19T13:20:54.272965" rpa="true" schemaversion="5">
 <suite id="s1" name="Project" source="c:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\project.robot">
 <test id="s1-t1" name="Read CSV files to lists and add data to database" line="86">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.009469" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.389766" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -13,43 +13,43 @@
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:06.884763" elapsed="0.167720"/>
+<status status="PASS" start="2025-02-19T13:20:54.333635" elapsed="0.083754"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:06.884763" elapsed="0.167720"/>
+<status status="PASS" start="2025-02-19T13:20:54.333635" elapsed="0.083754"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-02-19T12:37:07.052483" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceHeaderData.csv"&gt;C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceHeaderData.csv&lt;/a&gt;'.</msg>
-<msg time="2025-02-19T12:37:07.057185" level="INFO">${outputHeader} = ﻿InvoiceNumber;CompanyName;CompanyCode;ReferenceNumber;InvoiceDate;DueDate;BankAccountNumber;AmountExclVAT;VAT;TotalAmount
+<msg time="2025-02-19T13:20:54.418398" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceHeaderData.csv"&gt;C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceHeaderData.csv&lt;/a&gt;'.</msg>
+<msg time="2025-02-19T13:20:54.420100" level="INFO">${outputHeader} = ﻿InvoiceNumber;CompanyName;CompanyCode;ReferenceNumber;InvoiceDate;DueDate;BankAccountNumber;AmountExclVAT;VAT;TotalAmount
 143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3456 ...</msg>
 <var>${outputHeader}</var>
 <arg>${path_Teemu}ResultFiles\\InvoiceHeaderData.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.052483" elapsed="0.004702"/>
+<status status="PASS" start="2025-02-19T13:20:54.418398" elapsed="0.001702"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-02-19T12:37:07.059058" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceRowData.csv"&gt;C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceRowData.csv&lt;/a&gt;'.</msg>
-<msg time="2025-02-19T12:37:07.061588" level="INFO">${outputRows} = ﻿InvoiceNumber;RowNumber;Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total
+<msg time="2025-02-19T13:20:54.420100" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceRowData.csv"&gt;C:\Users\teemu\OneDrive\Työpöytä\vuosi2\Moduuli_3\Ohjelmistorobotiikka ja automaatio\ProjektiAutomaatio\Ohjelmistorobotiikka\ResultFiles\InvoiceRowData.csv&lt;/a&gt;'.</msg>
+<msg time="2025-02-19T13:20:54.420100" level="INFO">${outputRows} = ﻿InvoiceNumber;RowNumber;Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total
 143143;1;Installation Services;5;h;60;24;72;372
 143143;2;Replacement Products;10;kpl;105;24;252;1302
 1543235;1;Keyboar...</msg>
 <var>${outputRows}</var>
 <arg>${path_Teemu}ResultFiles\\InvoiceRowData.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.059058" elapsed="0.003795"/>
+<status status="PASS" start="2025-02-19T13:20:54.420100" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.065438" level="INFO">﻿InvoiceNumber;CompanyName;CompanyCode;ReferenceNumber;InvoiceDate;DueDate;BankAccountNumber;AmountExclVAT;VAT;TotalAmount
+<msg time="2025-02-19T13:20:54.424743" level="INFO">﻿InvoiceNumber;CompanyName;CompanyCode;ReferenceNumber;InvoiceDate;DueDate;BankAccountNumber;AmountExclVAT;VAT;TotalAmount
 143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3456 7890 1234 56;1350;324;1674
 1543235;Component Oy;1234567-9;15432359;01.10.2022;15.10.2022;FI05 1234 5600 7891 01;465;111.6;576.6
 153143;Service Provider Oy;1234567-8;1531439;15.12.2022;01.04.2021;FI12 3456 7890 1234 56;2700;648;3348
 </msg>
 <arg>${outputHeader}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.063422" elapsed="0.002016"/>
+<status status="PASS" start="2025-02-19T13:20:54.424743" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.068642" level="INFO">﻿InvoiceNumber;RowNumber;Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total
+<msg time="2025-02-19T13:20:54.424743" level="INFO">﻿InvoiceNumber;RowNumber;Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total
 143143;1;Installation Services;5;h;60;24;72;372
 143143;2;Replacement Products;10;kpl;105;24;252;1302
 1543235;1;Keyboard Logitech;10;kpl;40;24;96;496
@@ -61,125 +61,125 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 </msg>
 <arg>${outputRows}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.067450" elapsed="0.001192"/>
+<status status="PASS" start="2025-02-19T13:20:54.424743" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.068642" level="INFO">@{headers} = [ ﻿InvoiceNumber;CompanyName;CompanyCode;ReferenceNumber;InvoiceDate;DueDate;BankAccountNumber;AmountExclVAT;VAT;TotalAmount | 143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3...</msg>
+<msg time="2025-02-19T13:20:54.424743" level="INFO">@{headers} = [ ﻿InvoiceNumber;CompanyName;CompanyCode;ReferenceNumber;InvoiceDate;DueDate;BankAccountNumber;AmountExclVAT;VAT;TotalAmount | 143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3...</msg>
 <var>@{headers}</var>
 <arg>${outputHeader}</arg>
 <arg>\n</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.068642" elapsed="0.003010"/>
+<status status="PASS" start="2025-02-19T13:20:54.424743" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.071652" level="INFO">@{rows} = [ ﻿InvoiceNumber;RowNumber;Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total | 143143;1;Installation Services;5;h;60;24;72;372 | 143143;2;Replacement Products;10;kpl;105;24;252;1302 | 1543235;1...</msg>
+<msg time="2025-02-19T13:20:54.424743" level="INFO">@{rows} = [ ﻿InvoiceNumber;RowNumber;Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total | 143143;1;Installation Services;5;h;60;24;72;372 | 143143;2;Replacement Products;10;kpl;105;24;252;1302 | 1543235;1...</msg>
 <var>@{rows}</var>
 <arg>${outputRows}</arg>
 <arg>\n</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.071652" elapsed="0.002858"/>
+<status status="PASS" start="2025-02-19T13:20:54.424743" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.075369" level="INFO">Length is 5.</msg>
-<msg time="2025-02-19T12:37:07.075369" level="INFO">${length} = 5</msg>
+<msg time="2025-02-19T13:20:54.431206" level="INFO">Length is 5.</msg>
+<msg time="2025-02-19T13:20:54.431206" level="INFO">${length} = 5</msg>
 <var>${length}</var>
 <arg>${headers}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.075369" elapsed="0.001758"/>
+<status status="PASS" start="2025-02-19T13:20:54.424743" elapsed="0.006463"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.080040" level="INFO">${length} = 4</msg>
+<msg time="2025-02-19T13:20:54.432221" level="INFO">${length} = 4</msg>
 <var>${length}</var>
 <arg>${length}-1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.078093" elapsed="0.001947"/>
+<status status="PASS" start="2025-02-19T13:20:54.432221" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.083295" level="INFO">${index} = 0</msg>
+<msg time="2025-02-19T13:20:54.435602" level="INFO">${index} = 0</msg>
 <var>${index}</var>
 <arg>0</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.082709" elapsed="0.000586"/>
+<status status="PASS" start="2025-02-19T13:20:54.434335" elapsed="0.001267"/>
 </kw>
 <kw name="Remove From List" owner="Collections">
 <arg>${headers}</arg>
 <arg>${length}</arg>
 <doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.085555" elapsed="0.000641"/>
+<status status="PASS" start="2025-02-19T13:20:54.436035" elapsed="0.000618"/>
 </kw>
 <kw name="Remove From List" owner="Collections">
 <arg>${headers}</arg>
 <arg>${index}</arg>
 <doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.086814" elapsed="0.001376"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.088190" level="INFO">Length is 10.</msg>
-<msg time="2025-02-19T12:37:07.088190" level="INFO">${length} = 10</msg>
+<msg time="2025-02-19T13:20:54.436653" level="INFO">Length is 10.</msg>
+<msg time="2025-02-19T13:20:54.436653" level="INFO">${length} = 10</msg>
 <var>${length}</var>
 <arg>${rows}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.088190" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.092023" level="INFO">${length} = 9</msg>
+<msg time="2025-02-19T13:20:54.436653" level="INFO">${length} = 9</msg>
 <var>${length}</var>
 <arg>${length}-1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.088190" elapsed="0.003833"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Integer" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.095211" level="INFO">${index} = 0</msg>
+<msg time="2025-02-19T13:20:54.436653" level="INFO">${index} = 0</msg>
 <var>${index}</var>
 <arg>0</arg>
 <doc>Converts the given item to an integer number.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.094565" elapsed="0.000646"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Remove From List" owner="Collections">
 <arg>${rows}</arg>
 <arg>${length}</arg>
 <doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.096203" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Remove From List" owner="Collections">
 <arg>${rows}</arg>
 <arg>${index}</arg>
 <doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.096203" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.096203" level="INFO">['143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3456 7890 1234 56;1350;324;1674', '1543235;Component Oy;1234567-9;15432359;01.10.2022;15.10.2022;FI05 1234 5600 7891 01;465;111.6;576.6', '153143;Service Provider Oy;1234567-8;1531439;15.12.2022;01.04.2021;FI12 3456 7890 1234 56;2700;648;3348']</msg>
+<msg time="2025-02-19T13:20:54.436653" level="INFO">['143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3456 7890 1234 56;1350;324;1674', '1543235;Component Oy;1234567-9;15432359;01.10.2022;15.10.2022;FI05 1234 5600 7891 01;465;111.6;576.6', '153143;Service Provider Oy;1234567-8;1531439;15.12.2022;01.04.2021;FI12 3456 7890 1234 56;2700;648;3348']</msg>
 <arg>${headers}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.096203" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.104184" level="INFO">['143143;1;Installation Services;5;h;60;24;72;372', '143143;2;Replacement Products;10;kpl;105;24;252;1302', '1543235;1;Keyboard Logitech;10;kpl;40;24;96;496', '1543235;2;Brother printer;1;kpl;65;24;15.6;80.6', '153143;1;Installation Services;5;h;60;24;72;372', '153143;2;Replacement Products;10;kpl;105;24;252;1302', '153143;3;Cleaning Services;5;h;60;24;72;372', '153143;4;Cleaning Wipes;10;kpl;105;24;252;1302']</msg>
+<msg time="2025-02-19T13:20:54.436653" level="INFO">['143143;1;Installation Services;5;h;60;24;72;372', '143143;2;Replacement Products;10;kpl;105;24;252;1302', '1543235;1;Keyboard Logitech;10;kpl;40;24;96;496', '1543235;2;Brother printer;1;kpl;65;24;15.6;80.6', '153143;1;Installation Services;5;h;60;24;72;372', '153143;2;Replacement Products;10;kpl;105;24;252;1302', '153143;3;Cleaning Services;5;h;60;24;72;372', '153143;4;Cleaning Wipes;10;kpl;105;24;252;1302']</msg>
 <arg>${rows}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.103245" elapsed="0.000939"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.106057" level="INFO">143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3456 7890 1234 56;1350;324;1674</msg>
+<msg time="2025-02-19T13:20:54.436653" level="INFO">143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3456 7890 1234 56;1350;324;1674</msg>
 <arg>${headerElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.106057" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.108083" level="INFO">@{headerItems} = [ 143143 | Service Provider Oy | 1234567-8 | 1431432 | 15.12.2022 | 07.04.2021 | FI12 3456 7890 1234 56 | 1350 | 324 | 1674 ]</msg>
+<msg time="2025-02-19T13:20:54.447856" level="INFO">@{headerItems} = [ 143143 | Service Provider Oy | 1234567-8 | 1431432 | 15.12.2022 | 07.04.2021 | FI12 3456 7890 1234 56 | 1350 | 324 | 1674 ]</msg>
 <var>@{headerItems}</var>
 <arg>${headerElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.108083" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.011203"/>
 </kw>
 <kw name="Add invoice header to database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.113286" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
-<msg time="2025-02-19T12:37:07.119164" level="WARN">Overwriting not closed connection.</msg>
+<msg time="2025-02-19T13:20:54.449329" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.453717" level="WARN">Overwriting not closed connection.</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -188,78 +188,78 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.110103" elapsed="0.014454"/>
+<status status="PASS" start="2025-02-19T13:20:54.449329" elapsed="0.004388"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.110103" elapsed="0.015063"/>
+<status status="PASS" start="2025-02-19T13:20:54.447856" elapsed="0.007302"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2025-02-19T12:37:07.133219" level="INFO">${InvoiceDate} = 2022-12-15</msg>
+<msg time="2025-02-19T13:20:54.458277" level="INFO">${InvoiceDate} = 2022-12-15</msg>
 <var>${InvoiceDate}</var>
 <arg>${items}[4]</arg>
 <arg>date_format=%d.%m.%Y</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.125166" elapsed="0.008628"/>
+<status status="PASS" start="2025-02-19T13:20:54.455158" elapsed="0.003119"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2025-02-19T12:37:07.135560" level="INFO">${dueDate} = 2021-04-07</msg>
+<msg time="2025-02-19T13:20:54.458277" level="INFO">${dueDate} = 2021-04-07</msg>
 <var>${dueDate}</var>
 <arg>${items}[5]</arg>
 <arg>date_format=%d.%m.%Y</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.134363" elapsed="0.001756"/>
+<status status="PASS" start="2025-02-19T13:20:54.458277" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.137896" level="INFO">${insertStatement} = insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1431...</msg>
+<msg time="2025-02-19T13:20:54.458277" level="INFO">${insertStatement} = insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1431...</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${InvoiceDate}', '${dueDate}', '${items}[6]', ${items}[7], ${items}[8], ${items}[9], -1, 'Processing');</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.136669" elapsed="0.001227"/>
+<status status="PASS" start="2025-02-19T13:20:54.458277" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.139113" level="INFO">insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('143143', 'Service Provider Oy', '1234567-8', '1431432', '2022-12-15', '2021-04-07', 'FI12 3456 7890 1234 56', 1350, 324, 1674, -1, 'Processing');</msg>
+<msg time="2025-02-19T13:20:54.458277" level="INFO">insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('143143', 'Service Provider Oy', '1234567-8', '1431432', '2022-12-15', '2021-04-07', 'FI12 3456 7890 1234 56', 1350, 324, 1674, -1, 'Processing');</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.138513" elapsed="0.000600"/>
+<status status="PASS" start="2025-02-19T13:20:54.458277" elapsed="0.004911"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.140186" level="INFO">Executing : Execute SQL String  |  insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('143143', 'Service Provider Oy', '1234567-8', '1431432', '2022-12-15', '2021-04-07', 'FI12 3456 7890 1234 56', 1350, 324, 1674, -1, 'Processing');</msg>
+<msg time="2025-02-19T13:20:54.463188" level="INFO">Executing : Execute SQL String  |  insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('143143', 'Service Provider Oy', '1234567-8', '1431432', '2022-12-15', '2021-04-07', 'FI12 3456 7890 1234 56', 1350, 324, 1674, -1, 'Processing');</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.139650" elapsed="0.008686"/>
+<status status="PASS" start="2025-02-19T13:20:54.463188" elapsed="0.003360"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.150270" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.466548" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.149683" elapsed="0.001169"/>
+<status status="PASS" start="2025-02-19T13:20:54.466548" elapsed="0.001000"/>
 </kw>
 <arg>${headerItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.110103" elapsed="0.041442"/>
+<status status="PASS" start="2025-02-19T13:20:54.447856" elapsed="0.019692"/>
 </kw>
 <var name="${headerElement}">143143;Service Provider Oy;1234567-8;1431432;15.12.2022;07.04.2021;FI12 3456 7890 1234 56;1350;324;1674</var>
-<status status="PASS" start="2025-02-19T12:37:07.106057" elapsed="0.045488"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.030895"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.153196" level="INFO">1543235;Component Oy;1234567-9;15432359;01.10.2022;15.10.2022;FI05 1234 5600 7891 01;465;111.6;576.6</msg>
+<msg time="2025-02-19T13:20:54.468547" level="INFO">1543235;Component Oy;1234567-9;15432359;01.10.2022;15.10.2022;FI05 1234 5600 7891 01;465;111.6;576.6</msg>
 <arg>${headerElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.152624" elapsed="0.000572"/>
+<status status="PASS" start="2025-02-19T13:20:54.468547" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.154810" level="INFO">@{headerItems} = [ 1543235 | Component Oy | 1234567-9 | 15432359 | 01.10.2022 | 15.10.2022 | FI05 1234 5600 7891 01 | 465 | 111.6 | 576.6 ]</msg>
+<msg time="2025-02-19T13:20:54.469546" level="INFO">@{headerItems} = [ 1543235 | Component Oy | 1234567-9 | 15432359 | 01.10.2022 | 15.10.2022 | FI05 1234 5600 7891 01 | 465 | 111.6 | 576.6 ]</msg>
 <var>@{headerItems}</var>
 <arg>${headerElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.153772" elapsed="0.001038"/>
+<status status="PASS" start="2025-02-19T13:20:54.468547" elapsed="0.000999"/>
 </kw>
 <kw name="Add invoice header to database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.159485" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.471547" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -268,78 +268,78 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.158473" elapsed="0.005145"/>
+<status status="PASS" start="2025-02-19T13:20:54.471547" elapsed="0.003245"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.156387" elapsed="0.008748"/>
+<status status="PASS" start="2025-02-19T13:20:54.470550" elapsed="0.005590"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2025-02-19T12:37:07.165135" level="INFO">${InvoiceDate} = 2022-10-01</msg>
+<msg time="2025-02-19T13:20:54.476140" level="INFO">${InvoiceDate} = 2022-10-01</msg>
 <var>${InvoiceDate}</var>
 <arg>${items}[4]</arg>
 <arg>date_format=%d.%m.%Y</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.165135" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.476140" elapsed="0.001000"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2025-02-19T12:37:07.168063" level="INFO">${dueDate} = 2022-10-15</msg>
+<msg time="2025-02-19T13:20:54.477140" level="INFO">${dueDate} = 2022-10-15</msg>
 <var>${dueDate}</var>
 <arg>${items}[5]</arg>
 <arg>date_format=%d.%m.%Y</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.165135" elapsed="0.002928"/>
+<status status="PASS" start="2025-02-19T13:20:54.477140" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.170075" level="INFO">${insertStatement} = insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1543...</msg>
+<msg time="2025-02-19T13:20:54.478141" level="INFO">${insertStatement} = insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1543...</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${InvoiceDate}', '${dueDate}', '${items}[6]', ${items}[7], ${items}[8], ${items}[9], -1, 'Processing');</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.168063" elapsed="0.002012"/>
+<status status="PASS" start="2025-02-19T13:20:54.478141" elapsed="0.001001"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.170075" level="INFO">insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1543235', 'Component Oy', '1234567-9', '15432359', '2022-10-01', '2022-10-15', 'FI05 1234 5600 7891 01', 465, 111.6, 576.6, -1, 'Processing');</msg>
+<msg time="2025-02-19T13:20:54.479142" level="INFO">insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1543235', 'Component Oy', '1234567-9', '15432359', '2022-10-01', '2022-10-15', 'FI05 1234 5600 7891 01', 465, 111.6, 576.6, -1, 'Processing');</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.170075" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.479142" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.172087" level="INFO">Executing : Execute SQL String  |  insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1543235', 'Component Oy', '1234567-9', '15432359', '2022-10-01', '2022-10-15', 'FI05 1234 5600 7891 01', 465, 111.6, 576.6, -1, 'Processing');</msg>
+<msg time="2025-02-19T13:20:54.481219" level="INFO">Executing : Execute SQL String  |  insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1543235', 'Component Oy', '1234567-9', '15432359', '2022-10-01', '2022-10-15', 'FI05 1234 5600 7891 01', 465, 111.6, 576.6, -1, 'Processing');</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.172087" elapsed="0.005970"/>
+<status status="PASS" start="2025-02-19T13:20:54.481219" elapsed="0.004011"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.178057" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.485230" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.178057" elapsed="0.002054"/>
+<status status="PASS" start="2025-02-19T13:20:54.485230" elapsed="0.001000"/>
 </kw>
 <arg>${headerItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.154810" elapsed="0.025301"/>
+<status status="PASS" start="2025-02-19T13:20:54.469546" elapsed="0.016684"/>
 </kw>
 <var name="${headerElement}">1543235;Component Oy;1234567-9;15432359;01.10.2022;15.10.2022;FI05 1234 5600 7891 01;465;111.6;576.6</var>
-<status status="PASS" start="2025-02-19T12:37:07.152092" elapsed="0.028019"/>
+<status status="PASS" start="2025-02-19T13:20:54.468547" elapsed="0.017683"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.182149" level="INFO">153143;Service Provider Oy;1234567-8;1531439;15.12.2022;01.04.2021;FI12 3456 7890 1234 56;2700;648;3348</msg>
+<msg time="2025-02-19T13:20:54.487229" level="INFO">153143;Service Provider Oy;1234567-8;1531439;15.12.2022;01.04.2021;FI12 3456 7890 1234 56;2700;648;3348</msg>
 <arg>${headerElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.182149" elapsed="0.002025"/>
+<status status="PASS" start="2025-02-19T13:20:54.487229" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.184174" level="INFO">@{headerItems} = [ 153143 | Service Provider Oy | 1234567-8 | 1531439 | 15.12.2022 | 01.04.2021 | FI12 3456 7890 1234 56 | 2700 | 648 | 3348 ]</msg>
+<msg time="2025-02-19T13:20:54.488410" level="INFO">@{headerItems} = [ 153143 | Service Provider Oy | 1234567-8 | 1531439 | 15.12.2022 | 01.04.2021 | FI12 3456 7890 1234 56 | 2700 | 648 | 3348 ]</msg>
 <var>@{headerItems}</var>
 <arg>${headerElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.184174" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.488410" elapsed="0.000000"/>
 </kw>
 <kw name="Add invoice header to database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.187197" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.490418" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -348,83 +348,83 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.187197" elapsed="0.005249"/>
+<status status="PASS" start="2025-02-19T13:20:54.490418" elapsed="0.003300"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.186187" elapsed="0.006259"/>
+<status status="PASS" start="2025-02-19T13:20:54.489421" elapsed="0.004297"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2025-02-19T12:37:07.194464" level="INFO">${InvoiceDate} = 2022-12-15</msg>
+<msg time="2025-02-19T13:20:54.494725" level="INFO">${InvoiceDate} = 2022-12-15</msg>
 <var>${InvoiceDate}</var>
 <arg>${items}[4]</arg>
 <arg>date_format=%d.%m.%Y</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.192446" elapsed="0.002018"/>
+<status status="PASS" start="2025-02-19T13:20:54.493718" elapsed="0.001007"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2025-02-19T12:37:07.194464" level="INFO">${dueDate} = 2021-04-01</msg>
+<msg time="2025-02-19T13:20:54.495731" level="INFO">${dueDate} = 2021-04-01</msg>
 <var>${dueDate}</var>
 <arg>${items}[5]</arg>
 <arg>date_format=%d.%m.%Y</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.194464" elapsed="0.002078"/>
+<status status="PASS" start="2025-02-19T13:20:54.495731" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.197557" level="INFO">${insertStatement} = insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1531...</msg>
+<msg time="2025-02-19T13:20:54.496726" level="INFO">${insertStatement} = insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('1531...</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${InvoiceDate}', '${dueDate}', '${items}[6]', ${items}[7], ${items}[8], ${items}[9], -1, 'Processing');</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.196542" elapsed="0.001015"/>
+<status status="PASS" start="2025-02-19T13:20:54.495731" elapsed="0.000995"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.199638" level="INFO">insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('153143', 'Service Provider Oy', '1234567-8', '1531439', '2022-12-15', '2021-04-01', 'FI12 3456 7890 1234 56', 2700, 648, 3348, -1, 'Processing');</msg>
+<msg time="2025-02-19T13:20:54.496726" level="INFO">insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('153143', 'Service Provider Oy', '1234567-8', '1531439', '2022-12-15', '2021-04-01', 'FI12 3456 7890 1234 56', 2700, 648, 3348, -1, 'Processing');</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.199638" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.496726" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.200749" level="INFO">Executing : Execute SQL String  |  insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('153143', 'Service Provider Oy', '1234567-8', '1531439', '2022-12-15', '2021-04-01', 'FI12 3456 7890 1234 56', 2700, 648, 3348, -1, 'Processing');</msg>
+<msg time="2025-02-19T13:20:54.498182" level="INFO">Executing : Execute SQL String  |  insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('153143', 'Service Provider Oy', '1234567-8', '1531439', '2022-12-15', '2021-04-01', 'FI12 3456 7890 1234 56', 2700, 648, 3348, -1, 'Processing');</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.200749" elapsed="0.004779"/>
+<status status="PASS" start="2025-02-19T13:20:54.497727" elapsed="0.005787"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.205528" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.503893" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.205528" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.000000"/>
 </kw>
 <arg>${headerItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.186187" elapsed="0.021869"/>
+<status status="PASS" start="2025-02-19T13:20:54.489421" elapsed="0.014472"/>
 </kw>
 <var name="${headerElement}">153143;Service Provider Oy;1234567-8;1531439;15.12.2022;01.04.2021;FI12 3456 7890 1234 56;2700;648;3348</var>
-<status status="PASS" start="2025-02-19T12:37:07.182149" elapsed="0.025907"/>
+<status status="PASS" start="2025-02-19T13:20:54.487229" elapsed="0.016664"/>
 </iter>
 <var>${headerElement}</var>
 <value>@{headers}</value>
-<status status="PASS" start="2025-02-19T12:37:07.104184" elapsed="0.103872"/>
+<status status="PASS" start="2025-02-19T13:20:54.436653" elapsed="0.067240"/>
 </for>
 <for flavor="IN">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.212769" level="INFO">143143;1;Installation Services;5;h;60;24;72;372</msg>
+<msg time="2025-02-19T13:20:54.503893" level="INFO">143143;1;Installation Services;5;h;60;24;72;372</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.210756" elapsed="0.002013"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.214799" level="INFO">@{rowItems} = [ 143143 | 1 | Installation Services | 5 | h | 60 | 24 | 72 | 372 ]</msg>
+<msg time="2025-02-19T13:20:54.503893" level="INFO">@{rowItems} = [ 143143 | 1 | Installation Services | 5 | h | 60 | 24 | 72 | 372 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.212769" elapsed="0.002030"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.000000"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.218330" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.503893" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -433,60 +433,60 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.218330" elapsed="0.003201"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.000000"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.216816" elapsed="0.004715"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.225121" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.503893" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.221531" elapsed="0.004656"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.226609" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.503893" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.226609" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.228621" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.503893" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.226609" elapsed="0.006806"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.014501"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.235045" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.518394" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.234513" elapsed="0.001085"/>
+<status status="PASS" start="2025-02-19T13:20:54.518394" elapsed="0.001011"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.216816" elapsed="0.019387"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.015512"/>
 </kw>
 <var name="${rowElement}">143143;1;Installation Services;5;h;60;24;72;372</var>
-<status status="PASS" start="2025-02-19T12:37:07.210756" elapsed="0.025447"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.015512"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.237360" level="INFO">143143;2;Replacement Products;10;kpl;105;24;252;1302</msg>
+<msg time="2025-02-19T13:20:54.520406" level="INFO">143143;2;Replacement Products;10;kpl;105;24;252;1302</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.236797" elapsed="0.000563"/>
+<status status="PASS" start="2025-02-19T13:20:54.520406" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.238488" level="INFO">@{rowItems} = [ 143143 | 2 | Replacement Products | 10 | kpl | 105 | 24 | 252 | 1302 ]</msg>
+<msg time="2025-02-19T13:20:54.520406" level="INFO">@{rowItems} = [ 143143 | 2 | Replacement Products | 10 | kpl | 105 | 24 | 252 | 1302 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.237923" elapsed="0.000565"/>
+<status status="PASS" start="2025-02-19T13:20:54.520406" elapsed="0.000997"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.240772" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.522402" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -495,60 +495,60 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.239609" elapsed="0.006534"/>
+<status status="PASS" start="2025-02-19T13:20:54.521403" elapsed="0.002999"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.239609" elapsed="0.006534"/>
+<status status="PASS" start="2025-02-19T13:20:54.521403" elapsed="0.002999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.247890" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.525692" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.246779" elapsed="0.001111"/>
+<status status="PASS" start="2025-02-19T13:20:54.524402" elapsed="0.001290"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.249064" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.525692" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.248478" elapsed="0.000586"/>
+<status status="PASS" start="2025-02-19T13:20:54.525692" elapsed="0.000997"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.250954" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.526689" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('143143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.250139" elapsed="0.005122"/>
+<status status="PASS" start="2025-02-19T13:20:54.526689" elapsed="0.003000"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.256377" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.529689" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.255777" elapsed="0.000972"/>
+<status status="PASS" start="2025-02-19T13:20:54.529689" elapsed="0.000000"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.239044" elapsed="0.018214"/>
+<status status="PASS" start="2025-02-19T13:20:54.521403" elapsed="0.009978"/>
 </kw>
 <var name="${rowElement}">143143;2;Replacement Products;10;kpl;105;24;252;1302</var>
-<status status="PASS" start="2025-02-19T12:37:07.236797" elapsed="0.020461"/>
+<status status="PASS" start="2025-02-19T13:20:54.519405" elapsed="0.011976"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.259056" level="INFO">1543235;1;Keyboard Logitech;10;kpl;40;24;96;496</msg>
+<msg time="2025-02-19T13:20:54.532584" level="INFO">1543235;1;Keyboard Logitech;10;kpl;40;24;96;496</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.258494" elapsed="0.000562"/>
+<status status="PASS" start="2025-02-19T13:20:54.531381" elapsed="0.001203"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.260158" level="INFO">@{rowItems} = [ 1543235 | 1 | Keyboard Logitech | 10 | kpl | 40 | 24 | 96 | 496 ]</msg>
+<msg time="2025-02-19T13:20:54.533524" level="INFO">@{rowItems} = [ 1543235 | 1 | Keyboard Logitech | 10 | kpl | 40 | 24 | 96 | 496 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.259616" elapsed="0.000542"/>
+<status status="PASS" start="2025-02-19T13:20:54.532584" elapsed="0.000940"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.263843" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.535522" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -557,60 +557,60 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.262934" elapsed="0.007969"/>
+<status status="PASS" start="2025-02-19T13:20:54.534523" elapsed="0.003335"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.261878" elapsed="0.009536"/>
+<status status="PASS" start="2025-02-19T13:20:54.534523" elapsed="0.003335"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.272764" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '1', 'Keyboard Logitech', '10', 'kpl', 40, '24', 96, 496);</msg>
+<msg time="2025-02-19T13:20:54.538872" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '1', 'Keyboard Logitech', '10', 'kpl', 40, '24', 96, 496);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.271414" elapsed="0.001945"/>
+<status status="PASS" start="2025-02-19T13:20:54.538872" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.274634" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '1', 'Keyboard Logitech', '10', 'kpl', 40, '24', 96, 496);</msg>
+<msg time="2025-02-19T13:20:54.539869" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '1', 'Keyboard Logitech', '10', 'kpl', 40, '24', 96, 496);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.273896" elapsed="0.001285"/>
+<status status="PASS" start="2025-02-19T13:20:54.538872" elapsed="0.000997"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.275727" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '1', 'Keyboard Logitech', '10', 'kpl', 40, '24', 96, 496);</msg>
+<msg time="2025-02-19T13:20:54.539869" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '1', 'Keyboard Logitech', '10', 'kpl', 40, '24', 96, 496);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.275181" elapsed="0.005450"/>
+<status status="PASS" start="2025-02-19T13:20:54.539869" elapsed="0.002999"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.281819" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.542868" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.281251" elapsed="0.001756"/>
+<status status="PASS" start="2025-02-19T13:20:54.542868" elapsed="0.000000"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.260884" elapsed="0.022123"/>
+<status status="PASS" start="2025-02-19T13:20:54.533524" elapsed="0.009344"/>
 </kw>
 <var name="${rowElement}">1543235;1;Keyboard Logitech;10;kpl;40;24;96;496</var>
-<status status="PASS" start="2025-02-19T12:37:07.257923" elapsed="0.025084"/>
+<status status="PASS" start="2025-02-19T13:20:54.531381" elapsed="0.011487"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.284901" level="INFO">1543235;2;Brother printer;1;kpl;65;24;15.6;80.6</msg>
+<msg time="2025-02-19T13:20:54.544577" level="INFO">1543235;2;Brother printer;1;kpl;65;24;15.6;80.6</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.284274" elapsed="0.000627"/>
+<status status="PASS" start="2025-02-19T13:20:54.544577" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.286018" level="INFO">@{rowItems} = [ 1543235 | 2 | Brother printer | 1 | kpl | 65 | 24 | 15.6 | 80.6 ]</msg>
+<msg time="2025-02-19T13:20:54.545748" level="INFO">@{rowItems} = [ 1543235 | 2 | Brother printer | 1 | kpl | 65 | 24 | 15.6 | 80.6 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.285449" elapsed="0.000569"/>
+<status status="PASS" start="2025-02-19T13:20:54.545420" elapsed="0.000328"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.288888" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.548083" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -619,60 +619,60 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.287790" elapsed="0.005205"/>
+<status status="PASS" start="2025-02-19T13:20:54.546704" elapsed="0.005064"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.287244" elapsed="0.006300"/>
+<status status="PASS" start="2025-02-19T13:20:54.546704" elapsed="0.005064"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.295275" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '2', 'Brother printer', '1', 'kpl', 65, '24', 15.6, 80.6);</msg>
+<msg time="2025-02-19T13:20:54.551768" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '2', 'Brother printer', '1', 'kpl', 65, '24', 15.6, 80.6);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.294153" elapsed="0.001122"/>
+<status status="PASS" start="2025-02-19T13:20:54.551768" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.296397" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '2', 'Brother printer', '1', 'kpl', 65, '24', 15.6, 80.6);</msg>
+<msg time="2025-02-19T13:20:54.551768" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '2', 'Brother printer', '1', 'kpl', 65, '24', 15.6, 80.6);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.295852" elapsed="0.001087"/>
+<status status="PASS" start="2025-02-19T13:20:54.551768" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.297521" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '2', 'Brother printer', '1', 'kpl', 65, '24', 15.6, 80.6);</msg>
+<msg time="2025-02-19T13:20:54.551768" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('1543235', '2', 'Brother printer', '1', 'kpl', 65, '24', 15.6, 80.6);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.296939" elapsed="0.004923"/>
+<status status="PASS" start="2025-02-19T13:20:54.551768" elapsed="0.007314"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.303209" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.560175" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.302586" elapsed="0.000623"/>
+<status status="PASS" start="2025-02-19T13:20:54.559658" elapsed="0.001066"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.286620" elapsed="0.016589"/>
+<status status="PASS" start="2025-02-19T13:20:54.545748" elapsed="0.014976"/>
 </kw>
 <var name="${rowElement}">1543235;2;Brother printer;1;kpl;65;24;15.6;80.6</var>
-<status status="PASS" start="2025-02-19T12:37:07.283596" elapsed="0.019613"/>
+<status status="PASS" start="2025-02-19T13:20:54.542868" elapsed="0.018407"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.305483" level="INFO">153143;1;Installation Services;5;h;60;24;72;372</msg>
+<msg time="2025-02-19T13:20:54.561806" level="INFO">153143;1;Installation Services;5;h;60;24;72;372</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.304972" elapsed="0.000511"/>
+<status status="PASS" start="2025-02-19T13:20:54.561806" elapsed="0.000584"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.306603" level="INFO">@{rowItems} = [ 153143 | 1 | Installation Services | 5 | h | 60 | 24 | 72 | 372 ]</msg>
+<msg time="2025-02-19T13:20:54.562390" level="INFO">@{rowItems} = [ 153143 | 1 | Installation Services | 5 | h | 60 | 24 | 72 | 372 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.306055" elapsed="0.000548"/>
+<status status="PASS" start="2025-02-19T13:20:54.562390" elapsed="0.001102"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.309627" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.566217" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -681,60 +681,60 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.307613" elapsed="0.025875"/>
+<status status="PASS" start="2025-02-19T13:20:54.565089" elapsed="0.004896"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.307613" elapsed="0.026468"/>
+<status status="PASS" start="2025-02-19T13:20:54.564056" elapsed="0.005929"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.335244" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.571134" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.334701" elapsed="0.000543"/>
+<status status="PASS" start="2025-02-19T13:20:54.571134" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.335244" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.572521" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.335244" elapsed="0.002012"/>
+<status status="PASS" start="2025-02-19T13:20:54.571134" elapsed="0.001387"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.337256" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.572521" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '1', 'Installation Services', '5', 'h', 60, '24', 72, 372);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.337256" elapsed="0.005849"/>
+<status status="PASS" start="2025-02-19T13:20:54.572521" elapsed="0.003715"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.344276" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.577380" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.343725" elapsed="0.001662"/>
+<status status="PASS" start="2025-02-19T13:20:54.576236" elapsed="0.001144"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.306603" elapsed="0.039339"/>
+<status status="PASS" start="2025-02-19T13:20:54.563492" elapsed="0.013888"/>
 </kw>
 <var name="${rowElement}">153143;1;Installation Services;5;h;60;24;72;372</var>
-<status status="PASS" start="2025-02-19T12:37:07.303209" elapsed="0.042733"/>
+<status status="PASS" start="2025-02-19T13:20:54.561275" elapsed="0.016105"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.347668" level="INFO">153143;2;Replacement Products;10;kpl;105;24;252;1302</msg>
+<msg time="2025-02-19T13:20:54.578500" level="INFO">153143;2;Replacement Products;10;kpl;105;24;252;1302</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.347080" elapsed="0.001145"/>
+<status status="PASS" start="2025-02-19T13:20:54.578500" elapsed="0.000000"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.349320" level="INFO">@{rowItems} = [ 153143 | 2 | Replacement Products | 10 | kpl | 105 | 24 | 252 | 1302 ]</msg>
+<msg time="2025-02-19T13:20:54.579625" level="INFO">@{rowItems} = [ 153143 | 2 | Replacement Products | 10 | kpl | 105 | 24 | 252 | 1302 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.348768" elapsed="0.000552"/>
+<status status="PASS" start="2025-02-19T13:20:54.579625" elapsed="0.000000"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.352564" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.584396" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -743,60 +743,60 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.351491" elapsed="0.005933"/>
+<status status="PASS" start="2025-02-19T13:20:54.582741" elapsed="0.004203"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.350957" elapsed="0.007019"/>
+<status status="PASS" start="2025-02-19T13:20:54.581292" elapsed="0.005652"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.359062" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.588635" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.357976" elapsed="0.001639"/>
+<status status="PASS" start="2025-02-19T13:20:54.588118" elapsed="0.001044"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.360771" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.589693" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.360203" elapsed="0.000568"/>
+<status status="PASS" start="2025-02-19T13:20:54.589162" elapsed="0.000531"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.361961" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.590216" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '2', 'Replacement Products', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.361370" elapsed="0.005286"/>
+<status status="PASS" start="2025-02-19T13:20:54.590216" elapsed="0.004813"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.367825" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.595586" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.367255" elapsed="0.001141"/>
+<status status="PASS" start="2025-02-19T13:20:54.595586" elapsed="0.000620"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.349868" elapsed="0.019202"/>
+<status status="PASS" start="2025-02-19T13:20:54.580638" elapsed="0.016080"/>
 </kw>
 <var name="${rowElement}">153143;2;Replacement Products;10;kpl;105;24;252;1302</var>
-<status status="PASS" start="2025-02-19T12:37:07.346525" elapsed="0.022545"/>
+<status status="PASS" start="2025-02-19T13:20:54.578500" elapsed="0.018218"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.370973" level="INFO">153143;3;Cleaning Services;5;h;60;24;72;372</msg>
+<msg time="2025-02-19T13:20:54.598188" level="INFO">153143;3;Cleaning Services;5;h;60;24;72;372</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.370257" elapsed="0.001247"/>
+<status status="PASS" start="2025-02-19T13:20:54.596718" elapsed="0.001829"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.372566" level="INFO">@{rowItems} = [ 153143 | 3 | Cleaning Services | 5 | h | 60 | 24 | 72 | 372 ]</msg>
+<msg time="2025-02-19T13:20:54.599601" level="INFO">@{rowItems} = [ 153143 | 3 | Cleaning Services | 5 | h | 60 | 24 | 72 | 372 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.372016" elapsed="0.002779"/>
+<status status="PASS" start="2025-02-19T13:20:54.598547" elapsed="0.001054"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.377427" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.603370" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -805,60 +805,60 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.377427" elapsed="0.003956"/>
+<status status="PASS" start="2025-02-19T13:20:54.602038" elapsed="0.004490"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.375851" elapsed="0.007597"/>
+<status status="PASS" start="2025-02-19T13:20:54.601364" elapsed="0.005164"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.383448" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '3', 'Cleaning Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.607629" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '3', 'Cleaning Services', '5', 'h', 60, '24', 72, 372);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.383448" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.606528" elapsed="0.001101"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.386583" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '3', 'Cleaning Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.608734" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '3', 'Cleaning Services', '5', 'h', 60, '24', 72, 372);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.385973" elapsed="0.000610"/>
+<status status="PASS" start="2025-02-19T13:20:54.607629" elapsed="0.001105"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.388370" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '3', 'Cleaning Services', '5', 'h', 60, '24', 72, 372);</msg>
+<msg time="2025-02-19T13:20:54.609920" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '3', 'Cleaning Services', '5', 'h', 60, '24', 72, 372);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.387173" elapsed="0.006329"/>
+<status status="PASS" start="2025-02-19T13:20:54.609553" elapsed="0.004236"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.394654" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.614326" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.394080" elapsed="0.001468"/>
+<status status="PASS" start="2025-02-19T13:20:54.613789" elapsed="0.001272"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.375851" elapsed="0.020234"/>
+<status status="PASS" start="2025-02-19T13:20:54.600348" elapsed="0.014713"/>
 </kw>
 <var name="${rowElement}">153143;3;Cleaning Services;5;h;60;24;72;372</var>
-<status status="PASS" start="2025-02-19T12:37:07.369702" elapsed="0.026383"/>
+<status status="PASS" start="2025-02-19T13:20:54.596718" elapsed="0.018343"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.397425" level="INFO">153143;4;Cleaning Wipes;10;kpl;105;24;252;1302</msg>
+<msg time="2025-02-19T13:20:54.617158" level="INFO">153143;4;Cleaning Wipes;10;kpl;105;24;252;1302</msg>
 <arg>${rowElement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.396875" elapsed="0.001099"/>
+<status status="PASS" start="2025-02-19T13:20:54.616166" elapsed="0.001557"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-02-19T12:37:07.398566" level="INFO">@{rowItems} = [ 153143 | 4 | Cleaning Wipes | 10 | kpl | 105 | 24 | 252 | 1302 ]</msg>
+<msg time="2025-02-19T13:20:54.617723" level="INFO">@{rowItems} = [ 153143 | 4 | Cleaning Wipes | 10 | kpl | 105 | 24 | 252 | 1302 ]</msg>
 <var>@{rowItems}</var>
 <arg>${rowElement}</arg>
 <arg>;</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.397974" elapsed="0.001197"/>
+<status status="PASS" start="2025-02-19T13:20:54.617723" elapsed="0.001134"/>
 </kw>
 <kw name="Add invoiceRow to Database">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.401458" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.621141" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -867,57 +867,57 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.400878" elapsed="0.005190"/>
+<status status="PASS" start="2025-02-19T13:20:54.619996" elapsed="0.003639"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.400303" elapsed="0.006291"/>
+<status status="PASS" start="2025-02-19T13:20:54.618857" elapsed="0.004778"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.407740" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '4', 'Cleaning Wipes', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.625267" level="INFO">${insertStatement} = insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '4', 'Cleaning Wipes', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <var>${insertStatement}</var>
 <arg>insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.407171" elapsed="0.001128"/>
+<status status="PASS" start="2025-02-19T13:20:54.624679" elapsed="0.000588"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.408904" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '4', 'Cleaning Wipes', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.626518" level="INFO">insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '4', 'Cleaning Wipes', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <arg>${insertStatement}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.408904" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.625267" elapsed="0.001251"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.410193" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '4', 'Cleaning Wipes', '10', 'kpl', 105, '24', 252, 1302);</msg>
+<msg time="2025-02-19T13:20:54.627025" level="INFO">Executing : Execute SQL String  |  insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('153143', '4', 'Cleaning Wipes', '10', 'kpl', 105, '24', 252, 1302);</msg>
 <arg>${insertStatement}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.409620" elapsed="0.005519"/>
+<status status="PASS" start="2025-02-19T13:20:54.627025" elapsed="0.002546"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.416272" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.631447" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.415699" elapsed="0.001761"/>
+<status status="PASS" start="2025-02-19T13:20:54.629571" elapsed="0.002396"/>
 </kw>
 <arg>${rowItems}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.399171" elapsed="0.018289"/>
+<status status="PASS" start="2025-02-19T13:20:54.618857" elapsed="0.014297"/>
 </kw>
 <var name="${rowElement}">153143;4;Cleaning Wipes;10;kpl;105;24;252;1302</var>
-<status status="PASS" start="2025-02-19T12:37:07.396875" elapsed="0.020585"/>
+<status status="PASS" start="2025-02-19T13:20:54.615061" elapsed="0.018093"/>
 </iter>
 <var>${rowElement}</var>
 <value>@{rows}</value>
-<status status="PASS" start="2025-02-19T12:37:07.210756" elapsed="0.207257"/>
+<status status="PASS" start="2025-02-19T13:20:54.503893" elapsed="0.130216"/>
 </for>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.421231" level="INFO">Executing : Disconnect From Database</msg>
-<msg time="2025-02-19T12:37:07.421231" level="INFO">No open database connection to close</msg>
+<msg time="2025-02-19T13:20:54.638796" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.638796" level="INFO">No open database connection to close</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.420656" elapsed="0.001537"/>
+<status status="PASS" start="2025-02-19T13:20:54.638223" elapsed="0.001115"/>
 </kw>
-<status status="PASS" start="2025-02-19T12:37:06.884763" elapsed="0.540113"/>
+<status status="PASS" start="2025-02-19T13:20:54.333635" elapsed="0.306302"/>
 </test>
 <test id="s1-t2" name="Validate and update validation info to DB" line="143">
 <kw name="Make Connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.455117" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
+<msg time="2025-02-19T13:20:54.641572" level="INFO">Connecting using : pymysql.connect(db=rpa_kurssi, user=Robotuser, passwd=***, host=localhost, port=3306, charset=None)</msg>
 <arg>pymysql</arg>
 <arg>${DBtoConnect}</arg>
 <arg>${dbuser}</arg>
@@ -926,327 +926,549 @@ connect to the database using provided parameters such as ``dbName``, ``dbUserna
 <arg>${dbport}</arg>
 <doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
 connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.453069" elapsed="0.006564"/>
+<status status="PASS" start="2025-02-19T13:20:54.641572" elapsed="0.002009"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.453069" elapsed="0.007605"/>
+<status status="PASS" start="2025-02-19T13:20:54.641572" elapsed="0.002009"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.462739" level="INFO">Executing : Query  |  select InvoiceNumber, ReferenceNumber, BankAccountNumber, TotalAmount from invoiceheader where invoicestatus_ID = -1; </msg>
-<msg time="2025-02-19T12:37:07.463904" level="INFO">${invoices} = ((143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00')), (153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00')), (1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60')...</msg>
+<msg time="2025-02-19T13:20:54.643581" level="INFO">Executing : Query  |  SELECT ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount, SUM(ir.Total) AS TotalSum FROM invoiceheader ih JOIN invoicerow ir ON ih.InvoiceNumber = ir.InvoiceNumber WHERE ih.invoicestatus_ID = -1 GROUP BY ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount; </msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${invoices} = ((143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'), Decimal('1674.00')), (153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'), Decimal('3348.00')), (1543235, '15432359', 'FI...</msg>
 <var>${invoices}</var>
-<arg>select InvoiceNumber, ReferenceNumber, BankAccountNumber, TotalAmount from invoiceheader where invoicestatus_ID = -1;</arg>
+<arg>SELECT ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount, SUM(ir.Total) AS TotalSum FROM invoiceheader ih JOIN invoicerow ir ON ih.InvoiceNumber = ir.InvoiceNumber WHERE ih.invoicestatus_ID = -1 GROUP BY ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount;</arg>
 <doc>Runs a query with the ``selectStatement`` and returns the result as a list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.461670" elapsed="0.002234"/>
+<status status="PASS" start="2025-02-19T13:20:54.643581" elapsed="0.004032"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.468851" level="INFO">FI12 3456 7890 1234 56</msg>
-<arg>${element[2]}</arg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">((143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'), Decimal('1674.00')), (153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'), Decimal('3348.00')), (1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'), Decimal('576.60')))</msg>
+<arg>${invoices}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.466835" elapsed="0.002016"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.470867" level="INFO">${invoiceStatus} = 0</msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${invoiceStatus} = 0</msg>
 <var>${invoiceStatus}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.468851" elapsed="0.002016"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.472359" level="INFO">${invoiceComment} = All ok</msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${invoiceComment} = All ok</msg>
 <var>${invoiceComment}</var>
 <arg>All ok</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.471846" elapsed="0.000513"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
 <kw name="Check IBAN">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.474371" level="INFO">${status} = False</msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.474371" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
 <kw name="Validate Iban" owner="Validations">
-<msg time="2025-02-19T12:37:07.476463" level="INFO">${status} = False</msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${IBAN}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.475953" elapsed="0.000510"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-02-19T12:37:07.477824" elapsed="0.000675"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </return>
-<msg time="2025-02-19T12:37:07.479109" level="INFO">${IbanCheck} = False</msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${IbanCheck} = False</msg>
 <var>${IbanCheck}</var>
 <arg>${element[2]}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.472359" elapsed="0.006750"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
 <if>
 <branch type="IF" condition="${IbanCheck}">
 <kw name="Log" owner="BuiltIn">
 <arg>Iban oikein</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-02-19T12:37:07.480412" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-02-19T12:37:07.479700" elapsed="0.000712"/>
+<status status="NOT RUN" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.480412" level="INFO">${invoiceStatus} = 2</msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${invoiceStatus} = 2</msg>
 <var>${invoiceStatus}</var>
 <arg>2</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.480412" elapsed="0.001861"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.483339" level="INFO">${invoiceComment} = Iban error</msg>
+<msg time="2025-02-19T13:20:54.647613" level="INFO">${invoiceComment} = Iban error</msg>
 <var>${invoiceComment}</var>
 <arg>Iban error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.482788" elapsed="0.000551"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-02-19T12:37:07.480412" elapsed="0.003522"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
 </branch>
-<status status="PASS" start="2025-02-19T12:37:07.479700" elapsed="0.004720"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.000000"/>
+</if>
+<kw name="Check Invoice Sum">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.657409" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.657409" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.657409" level="INFO">${HeaderTotal} = 1674.0</msg>
+<var>${HeaderTotal}</var>
+<arg>${HeaderTotal}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.657409" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.657409" level="INFO">${RowTotal} = 1674.0</msg>
+<var>${RowTotal}</var>
+<arg>${RowTotal}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.657409" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.657409" level="INFO">${DIFF} = 0.01</msg>
+<var>${DIFF}</var>
+<arg>0.01</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.657409" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Amount" owner="Validations">
+<msg time="2025-02-19T13:20:54.660975" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>${HeaderTotal}</arg>
+<arg>${RowTotal}</arg>
+<arg>${DIFF}</arg>
+<status status="PASS" start="2025-02-19T13:20:54.660975" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" start="2025-02-19T13:20:54.660975" elapsed="0.000000"/>
+</return>
+<msg time="2025-02-19T13:20:54.660975" level="INFO">${TotalCheck} = True</msg>
+<var>${TotalCheck}</var>
+<arg>${element[3]}</arg>
+<arg>${element[4]}</arg>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.013362"/>
+</kw>
+<if>
+<branch type="IF" condition="${TotalCheck}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.660975" level="INFO">Summat oikein</msg>
+<arg>Summat oikein</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.660975" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-19T13:20:54.660975" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${invoiceStatus}</var>
+<arg>3</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-19T13:20:54.663596" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${invoiceComment}</var>
+<arg>Amount error</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-19T13:20:54.663596" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T13:20:54.663596" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T13:20:54.660975" elapsed="0.002621"/>
 </if>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.485073" level="INFO">@{params} = [ 2 | Iban error | 143143 ]</msg>
+<msg time="2025-02-19T13:20:54.666345" level="INFO">@{params} = [ 2 | Iban error | 143143 ]</msg>
 <var>@{params}</var>
 <arg>${invoiceStatus}</arg>
 <arg>${invoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.484420" elapsed="0.000653"/>
+<status status="PASS" start="2025-02-19T13:20:54.663596" elapsed="0.003330"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.487085" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
+<msg time="2025-02-19T13:20:54.667475" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.487085" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.667475" elapsed="0.000846"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.487085" level="INFO">Executing : Execute SQL String  |  update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
+<msg time="2025-02-19T13:20:54.668914" level="INFO">Executing : Execute SQL String  |  update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.487085" elapsed="0.006263"/>
+<status status="PASS" start="2025-02-19T13:20:54.668321" elapsed="0.003656"/>
 </kw>
-<var name="${element}">(143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'))</var>
-<status status="PASS" start="2025-02-19T12:37:07.466835" elapsed="0.027080"/>
+<var name="${element}">(143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'), Decimal('1674.00'))</var>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.024907"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.496571" level="INFO">FI12 3456 7890 1234 56</msg>
-<arg>${element[2]}</arg>
+<msg time="2025-02-19T13:20:54.673469" level="INFO">((143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'), Decimal('1674.00')), (153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'), Decimal('3348.00')), (1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'), Decimal('576.60')))</msg>
+<arg>${invoices}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.495517" elapsed="0.001054"/>
+<status status="PASS" start="2025-02-19T13:20:54.673469" elapsed="0.000520"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.496571" level="INFO">${invoiceStatus} = 0</msg>
+<msg time="2025-02-19T13:20:54.674536" level="INFO">${invoiceStatus} = 0</msg>
 <var>${invoiceStatus}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.496571" elapsed="0.002014"/>
+<status status="PASS" start="2025-02-19T13:20:54.673989" elapsed="0.000547"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.498585" level="INFO">${invoiceComment} = All ok</msg>
+<msg time="2025-02-19T13:20:54.674536" level="INFO">${invoiceComment} = All ok</msg>
 <var>${invoiceComment}</var>
 <arg>All ok</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.498585" elapsed="0.001101"/>
+<status status="PASS" start="2025-02-19T13:20:54.674536" elapsed="0.000000"/>
 </kw>
 <kw name="Check IBAN">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.503028" level="INFO">${status} = False</msg>
+<msg time="2025-02-19T13:20:54.677250" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.500306" elapsed="0.002722"/>
+<status status="PASS" start="2025-02-19T13:20:54.676720" elapsed="0.000530"/>
 </kw>
 <kw name="Validate Iban" owner="Validations">
-<msg time="2025-02-19T12:37:07.505041" level="INFO">${status} = False</msg>
+<msg time="2025-02-19T13:20:54.677250" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${IBAN}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.503028" elapsed="0.002013"/>
+<status status="PASS" start="2025-02-19T13:20:54.677250" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-02-19T12:37:07.505559" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.677250" elapsed="0.000000"/>
 </return>
-<msg time="2025-02-19T12:37:07.505559" level="INFO">${IbanCheck} = False</msg>
+<msg time="2025-02-19T13:20:54.677250" level="INFO">${IbanCheck} = False</msg>
 <var>${IbanCheck}</var>
 <arg>${element[2]}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.500306" elapsed="0.005253"/>
+<status status="PASS" start="2025-02-19T13:20:54.675584" elapsed="0.001666"/>
 </kw>
 <if>
 <branch type="IF" condition="${IbanCheck}">
 <kw name="Log" owner="BuiltIn">
 <arg>Iban oikein</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-02-19T12:37:07.507572" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-02-19T13:20:54.677250" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-02-19T12:37:07.505559" elapsed="0.002013"/>
+<status status="NOT RUN" start="2025-02-19T13:20:54.677250" elapsed="0.000000"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.508867" level="INFO">${invoiceStatus} = 2</msg>
+<msg time="2025-02-19T13:20:54.679314" level="INFO">${invoiceStatus} = 2</msg>
 <var>${invoiceStatus}</var>
 <arg>2</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.508867" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.677250" elapsed="0.002064"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.511080" level="INFO">${invoiceComment} = Iban error</msg>
+<msg time="2025-02-19T13:20:54.679882" level="INFO">${invoiceComment} = Iban error</msg>
 <var>${invoiceComment}</var>
 <arg>Iban error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.508867" elapsed="0.002646"/>
+<status status="PASS" start="2025-02-19T13:20:54.679882" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-02-19T12:37:07.508489" elapsed="0.003024"/>
+<status status="PASS" start="2025-02-19T13:20:54.677250" elapsed="0.002632"/>
 </branch>
-<status status="PASS" start="2025-02-19T12:37:07.505559" elapsed="0.005954"/>
+<status status="PASS" start="2025-02-19T13:20:54.677250" elapsed="0.002632"/>
+</if>
+<kw name="Check Invoice Sum">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${HeaderTotal} = 3348.0</msg>
+<var>${HeaderTotal}</var>
+<arg>${HeaderTotal}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${RowTotal} = 3348.0</msg>
+<var>${RowTotal}</var>
+<arg>${RowTotal}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${DIFF} = 0.01</msg>
+<var>${DIFF}</var>
+<arg>0.01</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Amount" owner="Validations">
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>${HeaderTotal}</arg>
+<arg>${RowTotal}</arg>
+<arg>${DIFF}</arg>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</return>
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${TotalCheck} = True</msg>
+<var>${TotalCheck}</var>
+<arg>${element[3]}</arg>
+<arg>${element[4]}</arg>
+<status status="PASS" start="2025-02-19T13:20:54.679882" elapsed="0.002010"/>
+</kw>
+<if>
+<branch type="IF" condition="${TotalCheck}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.681892" level="INFO">Summat oikein</msg>
+<arg>Summat oikein</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${invoiceStatus}</var>
+<arg>3</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${invoiceComment}</var>
+<arg>Amount error</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
 </if>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.512607" level="INFO">@{params} = [ 2 | Iban error | 153143 ]</msg>
+<msg time="2025-02-19T13:20:54.681892" level="INFO">@{params} = [ 2 | Iban error | 153143 ]</msg>
 <var>@{params}</var>
 <arg>${invoiceStatus}</arg>
 <arg>${invoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.512607" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.514620" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.512607" elapsed="0.002013"/>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.515633" level="INFO">Executing : Execute SQL String  |  update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
+<msg time="2025-02-19T13:20:54.681892" level="INFO">Executing : Execute SQL String  |  update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.514620" elapsed="0.006680"/>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
 </kw>
-<var name="${element}">(153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'))</var>
-<status status="PASS" start="2025-02-19T12:37:07.495103" elapsed="0.026805"/>
+<var name="${element}">(153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'), Decimal('3348.00'))</var>
+<status status="PASS" start="2025-02-19T13:20:54.672520" elapsed="0.009372"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.523663" level="INFO">FI05 1234 5600 7891 01</msg>
-<arg>${element[2]}</arg>
+<msg time="2025-02-19T13:20:54.681892" level="INFO">((143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'), Decimal('1674.00')), (153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'), Decimal('3348.00')), (1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'), Decimal('576.60')))</msg>
+<arg>${invoices}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.521908" elapsed="0.001755"/>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.525673" level="INFO">${invoiceStatus} = 0</msg>
+<msg time="2025-02-19T13:20:54.681892" level="INFO">${invoiceStatus} = 0</msg>
 <var>${invoiceStatus}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.523663" elapsed="0.002010"/>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.526575" level="INFO">${invoiceComment} = All ok</msg>
+<msg time="2025-02-19T13:20:54.694989" level="INFO">${invoiceComment} = All ok</msg>
 <var>${invoiceComment}</var>
 <arg>All ok</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.526575" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.694989" elapsed="0.000938"/>
 </kw>
 <kw name="Check IBAN">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.529598" level="INFO">${status} = False</msg>
+<msg time="2025-02-19T13:20:54.696432" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.529598" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.696432" elapsed="0.000000"/>
 </kw>
 <kw name="Validate Iban" owner="Validations">
-<msg time="2025-02-19T12:37:07.531618" level="INFO">${status} = True</msg>
+<msg time="2025-02-19T13:20:54.696432" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${IBAN}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.529598" elapsed="0.002020"/>
+<status status="PASS" start="2025-02-19T13:20:54.696432" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-02-19T12:37:07.531618" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.698089" elapsed="0.000000"/>
 </return>
-<msg time="2025-02-19T12:37:07.532876" level="INFO">${IbanCheck} = True</msg>
+<msg time="2025-02-19T13:20:54.698089" level="INFO">${IbanCheck} = True</msg>
 <var>${IbanCheck}</var>
 <arg>${element[2]}</arg>
-<status status="PASS" start="2025-02-19T12:37:07.527588" elapsed="0.005806"/>
+<status status="PASS" start="2025-02-19T13:20:54.695927" elapsed="0.002162"/>
 </kw>
 <if>
 <branch type="IF" condition="${IbanCheck}">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.533394" level="INFO">Iban oikein</msg>
+<msg time="2025-02-19T13:20:54.700136" level="INFO">Iban oikein</msg>
 <arg>Iban oikein</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.533394" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.699104" elapsed="0.001032"/>
 </kw>
-<status status="PASS" start="2025-02-19T12:37:07.533394" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.699104" elapsed="0.001032"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Variable" owner="BuiltIn">
 <var>${invoiceStatus}</var>
 <arg>2</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-02-19T12:37:07.535415" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-02-19T13:20:54.701141" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${invoiceComment}</var>
 <arg>Iban error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-02-19T12:37:07.535415" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-02-19T13:20:54.701141" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-02-19T12:37:07.535415" elapsed="0.002017"/>
+<status status="NOT RUN" start="2025-02-19T13:20:54.700136" elapsed="0.001005"/>
 </branch>
-<status status="PASS" start="2025-02-19T12:37:07.533394" elapsed="0.004038"/>
+<status status="PASS" start="2025-02-19T13:20:54.699104" elapsed="0.002037"/>
+</if>
+<kw name="Check Invoice Sum">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.703141" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.702142" elapsed="0.000999"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.703141" level="INFO">${HeaderTotal} = 576.6</msg>
+<var>${HeaderTotal}</var>
+<arg>${HeaderTotal}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.703141" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.704147" level="INFO">${RowTotal} = 576.6</msg>
+<var>${RowTotal}</var>
+<arg>${RowTotal}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.703141" elapsed="0.001006"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.704147" level="INFO">${DIFF} = 0.01</msg>
+<var>${DIFF}</var>
+<arg>0.01</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.704147" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Amount" owner="Validations">
+<msg time="2025-02-19T13:20:54.705141" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>${HeaderTotal}</arg>
+<arg>${RowTotal}</arg>
+<arg>${DIFF}</arg>
+<status status="PASS" start="2025-02-19T13:20:54.704147" elapsed="0.000994"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" start="2025-02-19T13:20:54.705141" elapsed="0.000000"/>
+</return>
+<msg time="2025-02-19T13:20:54.705141" level="INFO">${TotalCheck} = True</msg>
+<var>${TotalCheck}</var>
+<arg>${element[3]}</arg>
+<arg>${element[4]}</arg>
+<status status="PASS" start="2025-02-19T13:20:54.701141" elapsed="0.004000"/>
+</kw>
+<if>
+<branch type="IF" condition="${TotalCheck}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T13:20:54.706147" level="INFO">Summat oikein</msg>
+<arg>Summat oikein</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T13:20:54.706147" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-19T13:20:54.705141" elapsed="0.001006"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${invoiceStatus}</var>
+<arg>3</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-19T13:20:54.706147" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${invoiceComment}</var>
+<arg>Amount error</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-19T13:20:54.707146" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T13:20:54.706147" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2025-02-19T13:20:54.705141" elapsed="0.002005"/>
 </if>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.537432" level="INFO">@{params} = [ 0 | All ok | 1543235 ]</msg>
+<msg time="2025-02-19T13:20:54.707146" level="INFO">@{params} = [ 0 | All ok | 1543235 ]</msg>
 <var>@{params}</var>
 <arg>${invoiceStatus}</arg>
 <arg>${invoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.537432" elapsed="0.001777"/>
+<status status="PASS" start="2025-02-19T13:20:54.707146" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-19T12:37:07.539209" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
+<msg time="2025-02-19T13:20:54.708146" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.539209" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-19T13:20:54.707146" elapsed="0.001000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.541785" level="INFO">Executing : Execute SQL String  |  update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
+<msg time="2025-02-19T13:20:54.708146" level="INFO">Executing : Execute SQL String  |  update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;</msg>
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sqlString`` as a single SQL command.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.539209" elapsed="0.008028"/>
+<status status="PASS" start="2025-02-19T13:20:54.708146" elapsed="0.002995"/>
 </kw>
-<var name="${element}">(1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'))</var>
-<status status="PASS" start="2025-02-19T12:37:07.521908" elapsed="0.025329"/>
+<var name="${element}">(1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'), Decimal('576.60'))</var>
+<status status="PASS" start="2025-02-19T13:20:54.681892" elapsed="0.030251"/>
 </iter>
 <var>${element}</var>
 <value>@{invoices}</value>
-<status status="PASS" start="2025-02-19T12:37:07.466835" elapsed="0.080402"/>
+<status status="PASS" start="2025-02-19T13:20:54.647613" elapsed="0.064530"/>
 </for>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
-<msg time="2025-02-19T12:37:07.550862" level="INFO">Executing : Disconnect From Database</msg>
+<msg time="2025-02-19T13:20:54.713143" level="INFO">Executing : Disconnect From Database</msg>
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-02-19T12:37:07.550511" elapsed="0.000351"/>
+<status status="PASS" start="2025-02-19T13:20:54.712143" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2025-02-19T12:37:07.452049" elapsed="0.098813"/>
+<status status="PASS" start="2025-02-19T13:20:54.640532" elapsed="0.072611"/>
 </test>
-<status status="PASS" start="2025-02-19T12:37:06.740563" elapsed="0.814140"/>
+<status status="PASS" start="2025-02-19T13:20:54.276935" elapsed="0.438290"/>
 </suite>
 <statistics>
 <total>
@@ -1259,6 +1481,6 @@ usually they are tuples or tuple-like objects.</doc>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-02-19T12:37:07.119164" level="WARN">Overwriting not closed connection.</msg>
+<msg time="2025-02-19T13:20:54.453717" level="WARN">Overwriting not closed connection.</msg>
 </errors>
 </robot>

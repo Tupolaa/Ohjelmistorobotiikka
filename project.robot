@@ -67,7 +67,7 @@ Check Invoice Sum
 
     ${HeaderTotal}=    Convert To Number    ${HeaderTotal}
     ${RowTotal}=    Convert To Number    ${RowTotal}
-    ${DIFF}=    Convert To Number    0
+    ${DIFF}=    Convert To Number    0.01
 
     ${status}=    Validate Amount    ${HeaderTotal}    ${RowTotal}    ${DIFF}
 
@@ -149,10 +149,11 @@ Validate and update validation info to DB
     Make Connection    ${dbname}
 
     # Find invoices
-    ${invoices}=    Query    select InvoiceNumber, ReferenceNumber, BankAccountNumber, TotalAmount from invoiceheader where invoicestatus_ID = -1;
+    ${invoices}=    Query    SELECT ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount, SUM(ir.Total) AS TotalSum FROM invoiceheader ih JOIN invoicerow ir ON ih.InvoiceNumber = ir.InvoiceNumber WHERE ih.invoicestatus_ID = -1 GROUP BY ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount;
 
+ 
     FOR    ${element}    IN    @{invoices}
-        Log    ${element[2]}
+        Log    ${invoices}
         ${invoiceStatus}=    Set Variable    0
         ${invoiceComment}=    Set Variable    All ok
 
@@ -165,12 +166,23 @@ Validate and update validation info to DB
 
         ELSE
         ${invoiceStatus}=    Set Variable    2
-        ${invoiceComment}=    Set Variable    Iban error
+        ${invoiceComment}=    Set Variable   Iban error
+            
+        END
+
+         ${TotalCheck}=    Check Invoice Sum    ${element[3]}    ${element[4]}
+        IF    ${TotalCheck}
+
+        Log    Summat oikein
+
+        ELSE
+        ${invoiceStatus}=    Set Variable    3
+        ${invoiceComment}=    Set Variable   Amount error
             
         END
 
         
-        # Validate: Invoice row amount vs header amount
+         
         
         # Update status to DB
         @{params}=    Create List    ${invoiceStatus}    ${invoiceComment}    ${element}[0]
