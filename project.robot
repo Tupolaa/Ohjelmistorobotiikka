@@ -5,7 +5,7 @@ Library    DatabaseLibrary
 Library    Collections
 Library    DateTime
 Library    Validations.py
-Library    validate
+
 
 # Tehdään root-kansion polusta oma muuttuja
 *** Variables ***
@@ -69,9 +69,9 @@ Check Invoice Sum
     ${RowTotal}=    Convert To Number    ${RowTotal}
     ${DIFF}=    Convert To Number    0
 
-    ${status}=    Is Equal    ${HeaderTotal}    ${RowTotal}    ${DIFF}
+    ${status}=    Validate Amount    ${HeaderTotal}    ${RowTotal}    ${DIFF}
 
-    RETURN ${status}
+    RETURN    ${status}
 
 
 *** Keywords ***
@@ -80,7 +80,7 @@ Check IBAN
     ${status}=    Set Variable    ${False}
     
     ${status}=    Validate Iban    ${IBAN}
-    RETURN ${status}
+    RETURN    ${status}
 
 *** Tasks ***
 Read CSV files to lists and add data to database
@@ -137,6 +137,7 @@ Read CSV files to lists and add data to database
 
         Add invoiceRow to Database    ${rowItems}
     END   
+    Disconnect From Database
 
 *** Tasks ***
 Validate and update validation info to DB
@@ -151,13 +152,23 @@ Validate and update validation info to DB
     ${invoices}=    Query    select InvoiceNumber, ReferenceNumber, BankAccountNumber, TotalAmount from invoiceheader where invoicestatus_ID = -1;
 
     FOR    ${element}    IN    @{invoices}
-        Log    ${element}
+        Log    ${element[2]}
         ${invoiceStatus}=    Set Variable    0
         ${invoiceComment}=    Set Variable    All ok
 
         # Validate referencenumber
         
-        # Validate IBAN
+        ${IbanCheck}=    Check IBAN    ${element[2]}
+        IF    ${IbanCheck}
+
+        Log    Iban oikein
+
+        ELSE
+        ${invoiceStatus}=    Set Variable    2
+        ${invoiceComment}=    Set Variable    Iban error
+            
+        END
+
         
         # Validate: Invoice row amount vs header amount
         
@@ -166,7 +177,7 @@ Validate and update validation info to DB
         ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;
         Execute Sql String    ${updateStmt}    parameters=${params}
     END
-    Log To Console    ${invoices}
+    
     Disconnect From Database
 
 
