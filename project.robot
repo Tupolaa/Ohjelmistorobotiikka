@@ -73,6 +73,15 @@ Check Invoice Sum
 
     RETURN ${status}
 
+
+*** Keywords ***
+Check IBAN
+    [Arguments]    ${IBAN}
+    ${status}=    Set Variable    ${False}
+    
+    ${status}=    Validate Iban    ${IBAN}
+    RETURN ${status}
+
 *** Tasks ***
 Read CSV files to lists and add data to database
     Make Connection    ${dbname}
