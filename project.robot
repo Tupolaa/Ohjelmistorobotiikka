@@ -4,6 +4,7 @@ Library    String
 Library    DatabaseLibrary
 Library    Collections
 Library    DateTime
+Library    Validations.py
 
 # Tehdään root-kansion polusta oma muuttuja
 *** Variables ***
