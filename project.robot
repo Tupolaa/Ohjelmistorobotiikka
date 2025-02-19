@@ -5,6 +5,7 @@ Library    DatabaseLibrary
 Library    Collections
 Library    DateTime
 Library    Validations.py
+Library    validate
 
 # Tehdään root-kansion polusta oma muuttuja
 *** Variables ***
@@ -58,7 +59,19 @@ Add invoiceRow to Database
 
 
     Disconnect From Database
-    
+
+*** Keywords ***
+Check Invoice Sum
+    [Arguments]    ${HeaderTotal}    ${RowTotal}
+    ${status}=    Set Variable    ${False}
+
+    ${HeaderTotal}=    Convert To Number    ${HeaderTotal}
+    ${RowTotal}=    Convert To Number    ${RowTotal}
+    ${DIFF}=    Convert To Number    0
+
+    ${status}=    Is Equal    ${HeaderTotal}    ${RowTotal}    ${DIFF}
+
+    RETURN ${status}
 
 *** Tasks ***
 Read CSV files to lists and add data to database
@@ -144,5 +157,7 @@ Validate and update validation info to DB
         ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;
         Execute Sql String    ${updateStmt}    parameters=${params}
     END
-
+    Log To Console    ${invoices}
     Disconnect From Database
+
+

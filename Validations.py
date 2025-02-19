@@ -7,6 +7,7 @@ def ValidateIban():
     
     return
 
-def ValidateAmount():
-    
-    return
+def ValidateAmount(HeaderAmount, RowAmount, MaxDIFF):
+    if(abs(HeaderAmount-RowAmount) < MaxDIFF):
+        return True    
+    return False
