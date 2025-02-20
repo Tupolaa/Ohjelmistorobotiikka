@@ -26,7 +26,6 @@ Make Connection
 
     Connect To Database    pymysql    ${DBtoConnect}    ${dbuser}    ${dbpass}    ${dbhost}    ${dbport}
 
-
 *** Keywords ***
 Add invoice header to database
     [Arguments]    ${items}
@@ -35,28 +34,21 @@ Add invoice header to database
     ${InvoiceDate}=    Convert Date    ${items}[4]    date_format=%d.%m.%Y    result_format=%Y-%m-%d
     ${dueDate}=    Convert Date    ${items}[5]    date_format=%d.%m.%Y    result_format=%Y-%m-%d
 
-
     ${insertStatement}=    Set Variable    insert into invoiceheader (InvoiceNumber, CompanyName, CompanyCode, ReferenceNumber, InvoiceDate, DueDate, BankAccountNumber, AmountExclVAT, VAT, TotalAmount, Invoicestatus_ID, Comments) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${InvoiceDate}', '${dueDate}', '${items}[6]', ${items}[7], ${items}[8], ${items}[9], -1, 'Processing');    
     Log    ${insertStatement}
     Execute Sql String    ${insertStatement}
 
-
     Disconnect From Database
-
 
 *** Keywords ***
 Add invoiceRow to Database
     [Arguments]    ${items}
     Make Connection    ${dbname}
 
-
-
     ${insertStatement}=    Set Variable    insert into invoicerow (InvoiceNumber, RowNumber, Description, Quantity, Unit, UnitPrice, VATPercent, VAT, Total) values ('${items}[0]', '${items}[1]', '${items}[2]', '${items}[3]', '${items}[4]', ${items}[5], '${items}[6]', ${items}[7], ${items}[8]);
 
     Log    ${insertStatement}
     Execute Sql String    ${insertStatement}
-
-
 
     Disconnect From Database
 
@@ -73,7 +65,6 @@ Check Invoice Sum
 
     RETURN    ${status}
 
-
 *** Keywords ***
 Check IBAN
     [Arguments]    ${IBAN}
@@ -82,11 +73,19 @@ Check IBAN
     ${status}=    Validate Iban    ${IBAN}
     RETURN    ${status}
 
+*** Keywords ***
+Check Reference Number
+    [Arguments]    ${ReferenceNum}
+    ${status}=    Set Variable    ${False}
+
+    ${status}=    Validate Ref Number    ${ReferenceNum}
+    RETURN    ${status}
+
 *** Tasks ***
 Read CSV files to lists and add data to database
     Make Connection    ${dbname}
-    ${outputHeader}=    Get File    ${path_Teemu}ResultFiles\\InvoiceHeaderData.csv
-    ${outputRows}=    Get File    ${path_Teemu}ResultFiles\\InvoiceRowData.csv
+    ${outputHeader}=    Get File    ${path_Jani}ResultFiles\\InvoiceHeaderData.csv
+    ${outputRows}=    Get File    ${path_Jani}ResultFiles\\InvoiceRowData.csv
     Log    ${outputHeader}
     Log    ${outputRows}
 
@@ -141,14 +140,14 @@ Read CSV files to lists and add data to database
 
 *** Tasks ***
 Validate and update validation info to DB
-    # Find all invoices with status -1 Processing
-    # Validations:
-    #     * Referencenumber
+    # Haetaan kaikki laskut minkä statuksena on -1 = Processing
+    # Validaatiot:
+    #     * Viitenumero
     #     * IBAN
-    #     * Invoice row amount vs header amount
+    #     * Summan tarkastus otsikko- ja rivitasolla
     Make Connection    ${dbname}
 
-    # Find invoices
+    # Haetaan laskut
     ${invoices}=    Query    SELECT ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount, SUM(ir.Total) AS TotalSum FROM invoiceheader ih JOIN invoicerow ir ON ih.InvoiceNumber = ir.InvoiceNumber WHERE ih.invoicestatus_ID = -1 GROUP BY ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount;
 
  
@@ -157,8 +156,17 @@ Validate and update validation info to DB
         ${invoiceStatus}=    Set Variable    0
         ${invoiceComment}=    Set Variable    All ok
 
-        # Validate referencenumber
-        
+        # Viitenumeron validointi
+        ${ReferenceNumCheck}=    Check Reference Number    ${element[1]}
+        IF    ${ReferenceNumCheck}
+
+            Log    Viitenumero oikein
+        ELSE
+            ${invoiceStatus}=    Set Variable    1
+            ${invoiceComment}=    Set Variable   Ref error
+        END
+
+        # IBAN-numeron validointi
         ${IbanCheck}=    Check IBAN    ${element[2]}
         IF    ${IbanCheck}
 
@@ -170,7 +178,8 @@ Validate and update validation info to DB
             
         END
 
-         ${TotalCheck}=    Check Invoice Sum    ${element[3]}    ${element[4]}
+        # Summan tarkastus otsikko- ja rivitasolla
+        ${TotalCheck}=    Check Invoice Sum    ${element[3]}    ${element[4]}
         IF    ${TotalCheck}
 
         Log    Summat oikein
@@ -182,9 +191,7 @@ Validate and update validation info to DB
         END
 
         
-         
-        
-        # Update status to DB
+        # Päivitetään tiedot tietokantaan
         @{params}=    Create List    ${invoiceStatus}    ${invoiceComment}    ${element}[0]
         ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;
         Execute Sql String    ${updateStmt}    parameters=${params}
