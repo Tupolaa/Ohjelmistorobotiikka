@@ -33,4 +33,3 @@ def ValidateAmount(HeaderAmount, RowAmount, MaxDIFF):
     return False
 
 
-print (ValidateRefNumber("1431432"))
