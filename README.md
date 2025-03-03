@@ -1,7 +1,10 @@
 # Ohjelmistorobotiikka
 Ohjelmistorobotiikka ja -automaatio
 
-Työvaiheet: 
+Työvaiheet
+
+UiPathissa:
+
 
 1. Luodaan Data taulut Laskujen otsikoille ja riveille. Määritellään data taulujen sisältö tietokanta taulujen sarakkeiden nimien mukaisesti.
 
