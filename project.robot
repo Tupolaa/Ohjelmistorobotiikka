@@ -94,9 +94,10 @@ Read CSV files to lists and add data to database
     @{headers}=    Split String    ${outputHeader}    \n
     @{rows}=    Split String    ${outputRows}    \n
 
-    # Poistetaan listoista ensimmäisen ja viimeisen indeksin elementit (Otsikot ja tyhjä indeksi)
-    # Ensin headers lista
 
+    # Poistetaan listoista ensimmäisen ja viimeisen indeksin elementit (Otsikot ja tyhjä indeksi)
+
+    # Ensin headers lista
     ${length}=    Get Length    ${headers}
     ${length}=    Evaluate    ${length}-1
     ${index}=    Convert To Integer    0
@@ -105,7 +106,6 @@ Read CSV files to lists and add data to database
     Remove From List    ${headers}    ${index}
 
     # Seuraavaksi rows lista
-
     ${length}=    Get Length    ${rows}
     ${length}=    Evaluate    ${length}-1
     ${index}=    Convert To Integer    0
@@ -117,10 +117,10 @@ Read CSV files to lists and add data to database
     Log    ${headers}
     Log    ${rows}
 
-
     # Listataan jokainen taulukon elementti ja tallennetaan se muuttujaan headerItems, erotinmerkkinä puolipiste ';'
-    # Kutsutaan keywordia ja lisätään tiedot tietokannan Invoiceheader tauluun
-    # Add invoice headers
+    # Kutsutaan keywordia ja lisätään tiedot tietokannan Invoiceheader ja invoiceheader tauluihin
+
+    # Lisätään header tiedot
     FOR    ${headerElement}    IN    @{headers}
         Log    ${headerElement}
         @{headerItems}=    Split String    ${headerElement}    ;
@@ -128,7 +128,7 @@ Read CSV files to lists and add data to database
         Add invoice header to database    ${headerItems}
     END    
 
-    # Add invoice Rows
+    # Lisätään rivi tiedot
 
      FOR    ${rowElement}    IN    @{rows}
         Log    ${rowElement}
@@ -148,7 +148,7 @@ Validate and update validation info to DB
     Make Connection    ${dbname}
 
     # Haetaan laskut
-    ${invoices}=    Query    SELECT ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount, SUM(ir.Total) AS TotalSum FROM invoiceheader ih JOIN invoicerow ir ON ih.InvoiceNumber = ir.InvoiceNumber WHERE ih.invoicestatus_ID = -1 GROUP BY ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount;
+    ${invoices}=    Query    select ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount, SUM(ir.Total) AS TotalSum FROM invoiceheader ih JOIN invoicerow ir ON ih.InvoiceNumber = ir.InvoiceNumber WHERE ih.invoicestatus_ID = -1 GROUP BY ih.InvoiceNumber, ih.ReferenceNumber, ih.BankAccountNumber, ih.TotalAmount;
 
  
     FOR    ${element}    IN    @{invoices}
@@ -190,7 +190,6 @@ Validate and update validation info to DB
             
         END
 
-        
         # Päivitetään tiedot tietokantaan
         @{params}=    Create List    ${invoiceStatus}    ${invoiceComment}    ${element}[0]
         ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_ID = %s, comments = %s where invoicenumber = %s;

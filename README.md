@@ -25,3 +25,20 @@ UiPathissa:
 9. Erotettiin datarivien tiedot otsikko datoista Split-komennolla
 
 10. Parsittiin tarvittavat datat splitatuista rivi tiedoista CSV-tiedostoon
+
+
+Robot Frameworkissa: 
+
+1. Tehtiin tarvittavat keywordit millä otettiin yhteys tietokantaan.
+
+2. Splitattiin CSV-tiedostojen tuloste puolipistettä erotinmerkkinä käyttäen, ja luotiin näiden avulla SQL-lauseet millä tiedot siirrettiin oikeisiin tietokannan sarakkeisiin, Header ja Row tauluille molemmille omat keywordinsa. Jokaisen laskun tila päivitettiin tässä vaiheessa "-1" eli "Processing" vaiheeseen.
+
+3. Validaatiot: 
+
+    - Viitenumerolle
+    - IBAN-tunnukselle
+    - Otsikko ja rivitaulun laskujen summan tarkistus
+
+4. Tehtiin SQL-lauseke mikä hakee molemmista tietokannan tauluista INNER JOIN:ia hyödyntäet laskujen tiedot, minkä invoicestatus on -1. 
+
+5. For-Looppia hyödyntäen jokainen ${invoices} elementti päivitettiin statukseen 0 (All OK), mikäli validoinnit suoritettiin onnistuneesti.
