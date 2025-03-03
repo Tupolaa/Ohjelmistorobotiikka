@@ -1,13 +1,29 @@
 def ValidateRefNumber(referenceNum):
     
-    if not referenceNum.isdigit() or len(referenceNum) < 4:
+    # Tarkistetaan, että viitenumero on pituudeltaan vähintään 4 merkkiä pitkä
+    if len(referenceNum) < 4:
         return False
     
-    numbers = [7,3,1] 
-    checksum = sum(int(d) * numbers[i % 3] for i, d in enumerate(referenceNum[-2::-1]))
+    check_numbers = [7, 3, 1]
+    
+    
+    checksum = 0 
 
-    if (10 - (checksum % 10)) % 10 == int(referenceNum[-1]):  
-        return True 
+    # Käydään läpi viitenumeron kaikki numerot lukuunottamatta viimeistä, joka on sitten tarkistenumero
+    for i in range(len(referenceNum) - 1):
+        
+        digits = int(referenceNum[-2 - i])  # Luetaan numerot oikealta vasemmalle
+        multiplier = check_numbers[i % 3]  # Valitaan järjestys 7, 3, 1
+        
+        checksum = checksum + (digits * multiplier)
+
+    # Määritetään tarkistenumero
+    next_ten = (checksum + 9) // 10 * 10
+    check_digit = next_ten - checksum
+
+    # Verrataan laskettua tarkistenumeroa annettuun tarkistenumeroon
+    if check_digit == int(referenceNum[-1]):
+        return True
 
     return False
 
@@ -31,5 +47,3 @@ def ValidateAmount(HeaderAmount, RowAmount, MaxDIFF):
     if(abs(HeaderAmount-RowAmount) < MaxDIFF):
         return True    
     return False
-
-
