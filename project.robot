@@ -84,8 +84,8 @@ Check Reference Number
 *** Tasks ***
 Read CSV files to lists and add data to database
     Make Connection    ${dbname}
-    ${outputHeader}=    Get File    ${path_Jani}ResultFiles\\InvoiceHeaderData.csv
-    ${outputRows}=    Get File    ${path_Jani}ResultFiles\\InvoiceRowData.csv
+    ${outputHeader}=    Get File    ${path_Teemu}ResultFiles\\InvoiceHeaderData.csv
+    ${outputRows}=    Get File    ${path_Teemu}ResultFiles\\InvoiceRowData.csv
     Log    ${outputHeader}
     Log    ${outputRows}
 
