@@ -6,7 +6,7 @@ def ValidateRefNumber(referenceNum):
     
     check_numbers = [7, 3, 1]
     
-    
+
     checksum = 0 
 
     # Käydään läpi viitenumeron kaikki numerot lukuunottamatta viimeistä, joka on sitten tarkistenumero
@@ -47,3 +47,10 @@ def ValidateAmount(HeaderAmount, RowAmount, MaxDIFF):
     if(abs(HeaderAmount-RowAmount) < MaxDIFF):
         return True    
     return False
+
+
+# print(ValidateRefNumber("1431432"))
+
+# print(ValidateIban("FI3350780820102487"))
+
+# print(ValidateAmount(20, 20, 0.1))
